@@ -1,20 +1,44 @@
 var fs = require('fs')
 var path = require('path')
 
-module.exports = function read (dir, ext, callback) {
-  fs.readdir(dir, function (err, data) {
-	  if (err) {
-		  callback (err, null)
-	  }
-	  else {
-		  var list = []
-          data.forEach(function (name) {
-		    if (path.extname(name) === ext) {
-			  list.push(name)
-			}
-	  })
-  callback(null, data)
-	  }
- })
+module.exports = function(dir, ext, callback) {
+	var extension = '.' + ext
+	fs.readdir(dir, function(err, list) {
+		if (err) {
+			callback (err, null)
+		}
+
+		else {
+			var files = []
+			list.forEach(function(name) {
+				if (path.extname(name) == extension) {
+					files.push(name)
+				}
+			})
+
+			callback(null, files)
+		}
+	})
 }
+
+//Official Solution
+
+//solution_filter.js:
+
+//    var fs = require('fs')
+//    var path = require('path')
+		    
+//	 module.exports = function (dir, filterStr, callback) {
+					    
+//		 fs.readdir(dir, function (err, list) {
+//			 if (err)
+//			    return callback(err)
+														    
+//		      list = list.filter(function (file) {
+//					 return path.extname(file) === '.' + filterStr
+//					 })
+																	    
+//			     callback(null, list)
+//					 })
+//			     }
 
