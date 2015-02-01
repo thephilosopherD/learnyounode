@@ -5,7 +5,6 @@ var ext ='.'+ process.argv[3]
 var filenames = fs.readdir(process.argv[2], 
 function callback (err, list){
 if (err) throw err;
-filenames = list;
 var filtered = filenames.filter(function (a){
 return (pa.extname(a) === ext);
  });
