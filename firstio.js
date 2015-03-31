@@ -6,7 +6,9 @@ var nl = ar.length - 1
 
 console.log(nl);
 
-//Official:  
+   
+   //Official:  
+   
    // var fs = require('fs')
     
    // var contents = fs.readFileSync(process.argv[2])
