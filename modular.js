@@ -15,8 +15,6 @@ files (dir, ext, function(err, data) {
 	
 //Official Solution
 
-//solution.js:
-
 //    var filterFn = require('./solution_filter.js')
 //	  var dir = process.argv[2]
 //	  var filterStr = process.argv[3]
